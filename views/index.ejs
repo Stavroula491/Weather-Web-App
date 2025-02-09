@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet", href="/styles/main.css" >
+</head>
+<body>
+
+    <section>
+        <div class="nav-bar">
+            <form action="/" id="form" class="form" method="POST">
+                <select name="town" class="form-select">
+                  <option value="" data-display="Select">Select Town</option>
+                  <option value="Amsterdam">Amsterdam</option>
+                  <option value="Andorra la Vella">Andorra la Vella</option>
+                  <option value="Athens">Athens</option>
+                  <option value="Belgrade">Belgrade</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Bern">Bern</option>
+                  <option value="Bratislava">Bratislava</option>
+                  <option value="Brussels">Brussels</option>
+                  <option value="Bucharest">Bucharest</option>
+                  <option value="Budapest">Budapest</option>
+                  <option value="Chisinau">Chisinau</option>
+                  <option value="Copenhagen">Copenhagen</option>
+                  <option value="Dublin">Dublin</option>
+                  <option value="Helsinki">Helsinki</option>
+                  <option value="Kiev">Kiev</option>
+                  <option value="Lisbon">Lisbon</option>
+                  <option value="Ljubljana">Ljubljana</option>
+                  <option value="London">London</option>
+                  <option value="Luxembourg">Luxembourg</option>
+                  <option value="Madrid">Madrid</option>
+                  <option value="Minsk">Minsk</option>
+                  <option value="Monaco">Monaco</option>
+                  <option value="Moscow">Moscow</option>
+                  <option value="Nicosia">Nicosia</option>
+                  <option value="Oslo">Oslo</option>
+                  <option value="Paris">Paris</option>
+                  <option value="Podgorica">Podgorica</option>
+                  <option value="Prague">Prague</option>
+                  <option value="Pristina">Pristina</option>
+                  <option value="Reykjavik">Reykjavik</option>
+                  <option value="Riga">Riga</option>
+                  <option value="Rome">Rome</option>
+                  <option value="San Marino">San Marino</option>
+                  <option value="Sarajevo">Sarajevo</option>
+                  <option value="Sofia">Sofia</option>
+                  <option value="Stockholm">Stockholm</option>
+                  <option value="Tallinn">Tallinn</option>
+                  <option value="Tbilisi">Tbilisi</option>
+                  <option value="Tirana">Tirana</option>
+                </select>
+                <button type="submit" class="form-submit">Search</button>
+              </form>
+        
+            <div class="current-date">
+                <%- new Date().getDate() %>/<%- new Date().getMonth() + 1  %>/<%- new Date().getFullYear() %>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section>
+        <div class="current-temp">
+            <% if (locals.content) { %>
+            <div class="temp">
+                <h1>Temperature<br><%= content.town_name %></h1>
+                <h2><%= content.temperature %>&deg;C</h2>
+            </div>
+
+            <div class="other-weather">
+                <h1>Wind Speed</h1>
+                <h2><%= content.wind_speed %> km/h</h2>      
+            </div>
+            <% } else { %>
+                <h1> Wheather App </h1>
+                    <% } %>
+        </div>
+    </section>
+
+    <section class="hourly-section">
+        <div class="hourly-temp">
+            <% for (let i = 0; i<content.hourly.length; i++) {%>
+                <% const hour_list = ["00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00", "23:00"] %>
+                <div class="hourly-child">
+                    <h3><%= hour_list[i] %></h3>
+                    <h4><%= content.hourly[i] %>&deg;C</h4>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+</body>
+</html>

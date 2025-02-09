@@ -1,0 +1,200 @@
+body{
+    background-image: url("/images/beautiful-natural-clouds-sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    color: lightblue;
+
+}
+
+.nav-bar{
+    height: 70px;
+    background-color: lightblue;
+    box-shadow: 6px 6px 6px lightblue;
+    opacity: 0.7;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form{
+    margin-left: 5%;
+}
+
+.form-select{
+    border-radius: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 2%;
+    
+}
+
+.form-submit{
+    border-radius: 20px;
+    font-weight: bold;
+    
+}
+
+.current-date{
+    font-weight: bold;
+    color: black;
+    margin-left: 70%;
+}
+
+.current-temp{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.temp{
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid lightblue;
+    border-radius: 20px;
+    width: 60%;
+    margin-left: 15%;
+    box-shadow: 6px 6px 6px lightblue;
+}
+
+.temp h1{
+    font-size: smaller;
+}
+
+.temp h2{
+    font-size: 60px;
+}
+
+.other-weather{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid lightblue;
+    border-radius: 20px;
+    width: 60%;
+    margin-left: 25%;
+    box-shadow: 6px 6px 6px lightblue;
+}
+
+.other-weather h1{
+    font-size: smaller;
+}
+
+.hourly-section{
+    margin-top: 3%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.hourly-temp{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2%;
+}
+
+.hourly-child{
+    border: 2px solid lightblue;
+    border-radius: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 6px 6px 6px lightblue;
+}
+
+.hourly-child h3{
+    font-size: smaller;
+}
+
+@media (max-width: 1000px){
+    .current-temp{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+        
+    }
+
+    .temp{
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid lightblue;
+        border-radius: 20px;
+        box-shadow: 6px 6px 6px lightblue;
+        margin-left: 20%;
+    }
+    
+    .temp h1{
+        font-size: 20px;
+    }
+    
+    .temp h2{
+        font-size: 40px;
+    }
+    
+    .other-weather{
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid lightblue;
+        border-radius: 20px;
+        box-shadow: 6px 6px 6px lightblue;
+        margin-left: 20%;
+
+    }
+    
+    .other-weather h1{
+        font-size: smaller;
+    }
+
+    .current-date{
+        margin-left: 40%;
+    }
+
+    .hourly-section{
+        margin-top: 10%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .hourly-temp{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+    }
+
+    .hourly-child{
+        border: 2px solid lightblue;
+        border-radius: 20px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: 6px 6px 6px lightblue;
+    }
+    
+    .hourly-child h3{
+        font-size: smaller;
+    }
+}
